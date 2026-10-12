@@ -1,22 +1,20 @@
 package modelo;
 
+import java.util.ArrayList;
 import util.GeradorID;
 
 public class Entrega {
     private String id;
-    private String endereco;
-    private String status;
-    private Produto produto;
-    private Entregador entregador;
+    private String data;
+    private String Entregador entregador;
+    private ArrayList<Produto> listaProduto;
 
-    public Entrega(Produto produto, Entregador entregador, String endereco) {
+    public Entrega(String data, Entregador entregador) {
         this.id = GeradorID.getProximoIdEntrega();
-        this.produto = produto;
+        this.data = data;
         this.entregador = entregador;
-        this.endereco = endereco;
-        this.status = "PENDENTE";
+        this.listaProduto = new ArrayList<>();
 
-        produto.adicionarEntrega(this);
         entregador.adicionarEntrega(this);
     }
 
@@ -24,27 +22,29 @@ public class Entrega {
         return this.id;
     }
 
-    public String getEndereco() {
-        return this.endereco;
-    }
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    public Produto getProduto() {
-        return this.produto;
+    public String getData() {
+        return this.data;
     }
 
     public Entregador getEntregador() {
         return this.entregador;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public ArrayList<Produto> getListaProduto () {
+        return this.listaProduto;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public void adicionarProduto(Produto produto) {
+        this.listaProduto.add(produto);
+        produto.adicionarEntrega(this);
+    }
+
+    public void removerProduto(Produto produto) {
+        this.listaProduto.remove(produto);
+        produto.removerEntrega(this);
     }
 }

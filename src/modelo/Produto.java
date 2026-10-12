@@ -13,6 +13,7 @@ public class Produto {
 		this.id = GeradorID.getProximoIdProduto();
 		this.nome = nome;
 		this.peso = peso;
+		this.listaEntrega = new ArrayList<>();
 	}
 	
 	public String getId() {
