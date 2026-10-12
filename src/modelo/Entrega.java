@@ -3,10 +3,11 @@ package modelo;
 import java.util.ArrayList;
 import util.GeradorID;
 
+
 public class Entrega {
     private String id;
     private String data;
-    private String Entregador entregador;
+    private Entregador entregador;
     private ArrayList<Produto> listaProduto;
 
     public Entrega(String data, Entregador entregador) {

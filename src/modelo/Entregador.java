@@ -13,7 +13,7 @@ public class Entregador {
 	public Entregador(String nome) {
 		this.id = GeradorID.getProximoIdEntregador();
 		this.nome = nome;
-		this.thisEntrega = new ArrayList<>();
+		this.listaEntrega = new ArrayList<>();
 	}
 	
 	public String getId() {
