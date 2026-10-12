@@ -39,9 +39,9 @@ public class Produto {
 		return this.listaEntrega;
 	}
 
-public void adicionarEntrega(Entrega entrega) {
-	this.listaEntrega.add(entrega);
-}
+	public void adicionarEntrega(Entrega entrega) {
+		this.listaEntrega.add(entrega);
+	}
 	
 	public void removerEntrega(Entrega entrega) {
 		this.listaEntrega.remove(entrega);
