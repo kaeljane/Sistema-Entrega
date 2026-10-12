@@ -48,4 +48,11 @@ public class Entrega {
         this.listaProduto.remove(produto);
         produto.removerEntrega(this);
     }
+    
+    @Override
+    public String toString() {
+        return "Entrega: id = " + id + ", data = " + data + 
+               ", entregador = " + entregador.getNome() + 
+               ", produtos = " + listaProduto;
+    }
 }
