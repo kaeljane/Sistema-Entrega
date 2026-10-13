@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import util.GeradorID;
 
 public class Entregador {
-	private String id;
+	private int id;
 	private String nome;
 	private ArrayList<Entrega> listaEntrega;
 	
 	
 	public Entregador(String nome) {
-		this.id = GeradorID.getProximoIdEntregador();
+		// this.id = GeradorID.getProximoIdEntregador();
 		this.nome = nome;
 		this.listaEntrega = new ArrayList<>();
 	}
 	
-	public String getId() {
-		return this.id;
+	public void getId() {
+		// return this.id;
 	}
 	
 	public String getNome() {

@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import util.GeradorID;
 
 public class Produto {
-	private String id;
+	private int id;
 	private String nome;
 	private double peso_gramas;
 	private ArrayList<Entrega> listaEntrega;
 	
 	public Produto(String nome, double peso) {
-		this.id = GeradorID.getProximoIdProduto();
+		// this.id = GeradorID.getProximoIdProduto();
 		this.nome = nome;
 		this.peso_gramas = peso;
 		this.listaEntrega = new ArrayList<>();
 	}
 	
-	public String getId() {
-		return this.id;
+	public void getId() {
+		// return this.id;
 	}
 	
 	public String getNome() {
