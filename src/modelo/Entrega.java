@@ -49,7 +49,7 @@ public class Entrega {
     public void removerProduto(Produto produto) {
     	if (produto != null) {
     		this.listaProduto.remove(produto);
-    		produto.getListaEntrega().add(this);
+    		produto.getListaEntrega().remove(this);
     	}
     }
     
