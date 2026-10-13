@@ -7,6 +7,7 @@ import modelo.Entregador;
 public class Teste {
 
 	public static void main(String[] args) {
+		System.out.println("Criação dos objetos\n");
 		Produto p = new Produto("caneca azul", 330);
 		Produto p1 = new Produto("camisa vermelha", 100);
 		Entregador er = new Entregador("otávio");
@@ -30,6 +31,14 @@ public class Teste {
 		e.removerProduto(p1);
 		System.out.println(e);
 		System.out.println(p);
+		
+		Entregador er1 = new Entregador("márcia");
+		Entrega e1 = new Entrega("13/10/2026", er1);
+		System.out.println(er1);
+		p.adicionarEntrega(e1);
+		System.out.println(e1);
+		System.out.println(p);
+		
 	}
 
 }
