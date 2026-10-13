@@ -14,13 +14,11 @@ public class Teste {
 		
 		System.out.println(p);
 		System.out.println(p1);
-		System.out.println("Entregaodor: " + er.getNome());
+		System.out.println(er);
 		System.out.println(e);
 		
 		e.adicionarProduto(p);
 		e.adicionarProduto(p1);
-		p.adicionarEntrega(e);
-		p1.adicionarEntrega(e);
 		System.out.println("Lista dos produtos: " + e.getListaProduto());
 		System.out.println("Lista das entregas: " + p.getListaEntrega());
 		System.out.println("Lista das entregas: " + p1.getListaEntrega());
@@ -29,8 +27,7 @@ public class Teste {
 		System.out.println(p2);
 		
 		e.adicionarProduto(p2);
-		e.removerProduto(p);
-		p.removerEntrega(e);
+		e.removerProduto(p1);
 		System.out.println(e);
 		System.out.println(p);
 	}

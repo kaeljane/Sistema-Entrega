@@ -41,15 +41,21 @@ public class Produto {
 	}
 
 	public void adicionarEntrega(Entrega entrega) {
-		this.listaEntrega.add(entrega);
+		if (entrega != null) {
+			this.listaEntrega.add(entrega);
+			entrega.getListaProduto().add(this);
+		}
 	}
 	
 	public void removerEntrega(Entrega entrega) {
-		this.listaEntrega.remove(entrega);
+		if (entrega != null) {
+			this.listaEntrega.remove(entrega);
+			entrega.getListaProduto().remove(this);
+		}
 	}
 	
     @Override
     public String toString() {
-        return "Produto: id = " + id + ", nome = " + nome + ", peso =" + peso_gramas;
+        return "Produto: id = " + id + ", nome = " + nome + ", peso = " + peso_gramas;
     }
 }

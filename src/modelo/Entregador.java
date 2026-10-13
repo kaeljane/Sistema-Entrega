@@ -40,5 +40,11 @@ public class Entregador {
 		this.listaEntrega.remove(entrega);
 	}
 	
+    @Override
+    public String toString() {
+        return "Entregador: id = " + id + ", nome = " + nome +  
+               ", entregas = " + listaEntrega;
+    }
+	
 	
 }
