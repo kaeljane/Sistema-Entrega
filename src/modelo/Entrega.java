@@ -30,7 +30,7 @@ public class Entrega {
     public Entregador getEntregador() {
         return this.entregador;
     }
-
+    
     public ArrayList<Produto> getListaProduto () {
         return this.listaProduto;
     }
