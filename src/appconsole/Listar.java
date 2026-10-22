@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.db4o.ObjectContainer;
 
-import modelo.Produto;
 import modelo.Entrega;
 import modelo.Entregador;
+import modelo.Produto;
 import util.Util;
 
 public class Listar {

@@ -6,9 +6,9 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.config.EmbeddedConfiguration;
 
-import modelo.Produto;
 import modelo.Entrega;
 import modelo.Entregador;
+import modelo.Produto;
 
 public class Util {
 	private static ObjectContainer manager;

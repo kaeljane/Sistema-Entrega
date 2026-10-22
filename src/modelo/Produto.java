@@ -1,7 +1,6 @@
 package modelo;
 
 import java.util.ArrayList;
-import util.GeradorID;
 
 public class Produto {
 	private int id;
@@ -10,14 +9,9 @@ public class Produto {
 	private ArrayList<Entrega> listaEntrega;
 	
 	public Produto(String nome, double peso) {
-		// this.id = GeradorID.getProximoIdProduto();
 		this.nome = nome;
 		this.peso_gramas = peso;
 		this.listaEntrega = new ArrayList<>();
-	}
-	
-	public void getId() {
-		// return this.id;
 	}
 	
 	public String getNome() {

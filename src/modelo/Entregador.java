@@ -2,8 +2,6 @@ package modelo;
 
 import java.util.ArrayList;
 
-import util.GeradorID;
-
 public class Entregador {
 	private int id;
 	private String nome;
@@ -11,14 +9,10 @@ public class Entregador {
 	
 	
 	public Entregador(String nome) {
-		// this.id = GeradorID.getProximoIdEntregador();
 		this.nome = nome;
 		this.listaEntrega = new ArrayList<>();
 	}
-	
-	public void getId() {
-		// return this.id;
-	}
+
 	
 	public String getNome() {
 		return this.nome;
