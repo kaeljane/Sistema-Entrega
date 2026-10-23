@@ -1,9 +1,4 @@
 package util;
-/**********************************
- * IFPB - Curso Superior de Sistemas para Internet
- * Persistência de Objetos
- * Prof. Fausto Maranhão Ayres
- **********************************/
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -18,7 +13,7 @@ import com.db4o.events.EventRegistry;
 import com.db4o.events.EventRegistryFactory;
 import com.db4o.query.Query;
 
-//classe que controla a geração de IDs sequenciais para 
+//classe que controla a geraï¿½ï¿½o de IDs sequenciais para 
 //as classes que possuem atributo id
 
 public class GeradorID {
@@ -27,7 +22,7 @@ public class GeradorID {
 	@SuppressWarnings("unused")
 	static void ativar(ObjectContainer manager) {
 		if (manager == null)
-			throw new RuntimeException("Não pode ativar GeradorID - manager desconectado"); // desativado
+			throw new RuntimeException("Nï¿½o pode ativar GeradorID - manager desconectado"); // desativado
 
 		if (manager instanceof EmbeddedObjectContainer) {
 			// banco de sequencia local
@@ -74,7 +69,7 @@ public class GeradorID {
 			}
 		});
 
-		// Resgistrar trigger "AFTER COMMIT" disparado após manager.commit()
+		// Resgistrar trigger "AFTER COMMIT" disparado apï¿½s manager.commit()
 		eventRegistry.created().addListener((event, args) -> {
 			manager.ext().purge(); // limpar cache do manager
 			sequencia.ext().purge(); //

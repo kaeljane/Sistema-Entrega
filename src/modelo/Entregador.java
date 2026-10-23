@@ -13,7 +13,6 @@ public class Entregador {
 		this.listaEntrega = new ArrayList<>();
 	}
 
-	
 	public String getNome() {
 		return this.nome;
 	}

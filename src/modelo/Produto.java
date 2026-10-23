@@ -35,17 +35,13 @@ public class Produto {
 	}
 
 	public void adicionarEntrega(Entrega entrega) {
-		if (entrega != null) {
-			this.listaEntrega.add(entrega);
-			entrega.getListaProduto().add(this);
-		}
+		this.listaEntrega.add(entrega);
+		entrega.getListaProduto().add(this);
 	}
 	
 	public void removerEntrega(Entrega entrega) {
-		if (entrega != null) {
-			this.listaEntrega.remove(entrega);
-			entrega.getListaProduto().remove(this);
-		}
+		this.listaEntrega.remove(entrega);
+		entrega.getListaProduto().remove(this);
 	}
 	
     @Override

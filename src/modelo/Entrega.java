@@ -9,12 +9,14 @@ public class Entrega {
     private Entregador entregador;
     private ArrayList<Produto> listaProduto;
 
-    public Entrega(String data, Entregador entregador) {
+    public Entrega(String data, Entregador entregador, Produto produto) {
         this.data = data;
         this.entregador = entregador;
         this.listaProduto = new ArrayList<>();
 
         entregador.adicionarEntrega(this);
+        this.adicionarProduto(produto);
+        
     }
 
     public String getData() {
@@ -38,17 +40,13 @@ public class Entrega {
     }
     
     public void adicionarProduto(Produto produto) {
-    	if (produto != null) {
-    		this.listaProduto.add(produto);
-    		produto.getListaEntrega().add(this);
-    	}
+    	this.listaProduto.add(produto);
+    	produto.getListaEntrega().add(this);
     }
 
     public void removerProduto(Produto produto) {
-    	if (produto != null) {
-    		this.listaProduto.remove(produto);
-    		produto.getListaEntrega().remove(this);
-    	}
+    	this.listaProduto.remove(produto);
+    	produto.getListaEntrega().remove(this);
     }
     
     @Override
