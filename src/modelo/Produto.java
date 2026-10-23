@@ -3,7 +3,6 @@ package modelo;
 import java.util.ArrayList;
 
 public class Produto {
-	private int id;
 	private String nome;
 	private double peso_gramas;
 	private ArrayList<Entrega> listaEntrega;
@@ -44,8 +43,12 @@ public class Produto {
 		entrega.getListaProduto().remove(this);
 	}
 	
-    @Override
-    public String toString() {
-        return "Produto: id = " + id + ", nome = " + nome + ", peso = " + peso_gramas;
-    }
+	@Override
+	public String toString() {
+	    String datas = "";
+	    for (Entrega e : listaEntrega) {
+	        datas += e.getData() + " ";
+	    }
+	    return "Produto [" + nome + ", " + peso_gramas + "g] | Entregas: " + datas;
+	}
 }

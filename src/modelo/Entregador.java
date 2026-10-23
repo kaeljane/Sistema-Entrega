@@ -3,7 +3,6 @@ package modelo;
 import java.util.ArrayList;
 
 public class Entregador {
-	private int id;
 	private String nome;
 	private ArrayList<Entrega> listaEntrega;
 	
@@ -33,11 +32,15 @@ public class Entregador {
 		this.listaEntrega.remove(entrega);
 	}
 	
-    @Override
-    public String toString() {
-        return "Entregador: id = " + id + ", nome = " + nome +  
-               ", entregas = " + listaEntrega;
-    }
+	@Override
+	public String toString() {
+	    String entregas = "";
+	    for (Entrega e : listaEntrega) {
+	        entregas += e.getData();
+	    }
+
+	    return "Entregador: nome = " + nome + " | Entregas: " + entregas;
+	}
 	
 	
 }

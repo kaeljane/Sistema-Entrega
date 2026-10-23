@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 
 public class Entrega {
-    private int id;
     private String data;
     private Entregador entregador;
     private ArrayList<Produto> listaProduto;
@@ -51,8 +50,10 @@ public class Entrega {
     
     @Override
     public String toString() {
-        return "Entrega: id = " + id + ", data = " + data + 
-               ", entregador = " + entregador.getNome() + 
-               ", produtos = " + listaProduto;
+        String nomes = "";
+        for (Produto p : listaProduto) {
+            nomes += p.getNome() + " ";
+        }
+        return "Entrega [" + data + "] -> Entregador: " + entregador.getNome() + " | Produtos: " + nomes;
     }
 }
