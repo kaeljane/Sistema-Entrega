@@ -53,7 +53,7 @@ public class Util {
 		// conexao local
 		// --------------
 		try {
-			manager = Db4oEmbedded.openFile(config, "banco.db4o");
+			manager = Db4oEmbedded.openFile(config, "entrega.db4o");
 			System.out.println("banco conectado. ");
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco local \n" + e.getMessage());

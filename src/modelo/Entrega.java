@@ -2,8 +2,8 @@ package modelo;
 
 import java.util.ArrayList;
 
-
 public class Entrega {
+	private int id;
     private String data;
     private Entregador entregador;
     private ArrayList<Produto> listaProduto;
@@ -28,8 +28,12 @@ public class Entrega {
     
     public ArrayList<Produto> getListaProduto () {
         return this.listaProduto;
-    }
-
+    } 
+    
+	public int getId() {
+		return id;
+	} 
+	
     public void setData(String data) {
         this.data = data;
     }
@@ -52,8 +56,8 @@ public class Entrega {
     public String toString() {
         String nomes = "";
         for (Produto p : listaProduto) {
-            nomes += p.getNome() + " ";
+            nomes += p.getId() + " ";
         }
-        return "Entrega [" + data + "] -> Entregador: " + entregador.getNome() + " | Produtos: " + nomes;
+        return "Entrega [id = " + id + ", data = " + data + "] -> Entregador: " + entregador.getId() + " | Produtos: " + nomes;
     }
 }

@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 
 public class Produto {
+	private int id;
 	private String nome;
 	private double peso_gramas;
 	private ArrayList<Entrega> listaEntrega;
@@ -19,6 +20,10 @@ public class Produto {
 	
 	public double getPeso() {
 		return this.peso_gramas;
+	}
+	
+	public int getId() {
+		return id;
 	}
 	
 	public void setNome(String nome) {
@@ -47,8 +52,8 @@ public class Produto {
 	public String toString() {
 	    String datas = "";
 	    for (Entrega e : listaEntrega) {
-	        datas += e.getData() + " ";
+	        datas += e.getId() + " ";
 	    }
-	    return "Produto [" + nome + ", " + peso_gramas + "g] | Entregas: " + datas;
+	    return "Produto [id = " + id + ", nome = " + nome + ", peso = " + peso_gramas + "g] | Entregas: " + datas;
 	}
 }
