@@ -6,6 +6,8 @@ import com.db4o.ObjectContainer;
 import com.db4o.query.Query;
 
 import modelo.Entrega;
+import modelo.EntregaExpressa;
+import modelo.Entregador;
 import modelo.Produto;
 import util.Util;
 
@@ -15,6 +17,7 @@ public class Alterar {
 		Util.conectar();
 		ObjectContainer manager = Util.getManager();
 
+		// TESTE 1: Remover relacionamento entre Produto e Entrega
 		String nomeProduto = "camisa vermelha";
 		String dataEntrega = "13/10/2026";
 
@@ -48,6 +51,35 @@ public class Alterar {
 				System.out.println("removeu o relacionamento entre " + nomeProduto + " e a entrega de " + dataEntrega);
 			}
 		}
+		// TESTE 2: Alterar entregador e taxa extra de uma EntregaExpressa
+		Query q3 = manager.query();
+		q3.constrain(EntregaExpressa.class);
+		q3.descend("data").constrain("14/10/2026");
+		List<EntregaExpressa> expressas = q3.execute();
+		
+		Query q4 = manager.query();
+		q4.constrain(Entregador.class);
+		q4.descend("nome").constrain("lucas");
+		List<Entregador> entregadores = q4.execute();
+		
+		if (!expressas.isEmpty() && !entregadores.isEmpty()) {
+			EntregaExpressa ee = expressas.getFirst();
+			Entregador antigo = ee.getEntregador();
+			Entregador novo = entregadores.getFirst();
+			
+			antigo.removerEntrega(ee);
+			novo.adicionarEntrega(ee);
+			ee.setEntregador(novo);
+			ee.setTaxaExtra(22.0);
+			
+			manager.store(antigo);
+			manager.store(novo);
+			manager.store(ee);
+			manager.commit();
+			System.out.println("transferiu EntregaExpressa (14/10/2026 para )" + novo.getNome() + " e atualizou taxa extra.");
+			
+		}
+		
 
 		Util.desconectar();
 		System.out.println("fim do programa");
