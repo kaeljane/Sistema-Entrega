@@ -9,6 +9,7 @@ import com.db4o.config.EmbeddedConfiguration;
 import modelo.Entrega;
 import modelo.Entregador;
 import modelo.Produto;
+import modelo.EntregaExpressa;
 
 public class Util {
 	private static ObjectContainer manager;
@@ -48,6 +49,9 @@ public class Util {
 		config.common().objectClass(Entregador.class).cascadeOnDelete(false);
 		config.common().objectClass(Entregador.class).cascadeOnUpdate(true);
 		config.common().objectClass(Entregador.class).cascadeOnActivate(true);
+		config.common().objectClass(EntregaExpressa.class).cascadeOnDelete(false);
+		config.common().objectClass(EntregaExpressa.class).cascadeOnUpdate(true);
+		config.common().objectClass(EntregaExpressa.class).cascadeOnActivate(true);
 		config.common().activationDepth(Integer.MAX_VALUE); // profundidade de ativacao para acessar os objetos
 
 		// conexao local
